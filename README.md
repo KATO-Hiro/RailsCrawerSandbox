@@ -16,6 +16,7 @@ Comming soon.
 
 - Ruby 2.6.5
 - Ruby on Rails 6.0.2
+- [replay-table](https://github.com/TargetProcess/replay-table)
 - RSpec
 - MySQL 8.0.18
 - Docker Desktop 19.03+
