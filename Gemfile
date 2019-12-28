@@ -66,3 +66,6 @@ gem 'html2slim'
 
 # Simple, but flexible HTTP client library, with support for multiple backends.
 gem 'faraday'
+
+# Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
+gem 'rack-cors'

@@ -1,2 +1,18 @@
 h2
   | Replay contest
+
+
+.replayTable[id="replay-formula-one-drivers-2016"
+  data-source="csv/formula-one-drivers.csv"
+  data-preset="f1"
+  data-extra-columns-number="1"
+  data-columns="position,item,Team,points,points.change"
+  data-labels="#,Driver,Team,Points"
+  ]
+
+.replayTable[id="replay-english-premier-league-2016-2017"
+  data-source="json/english-premier-league.json"
+  data-format="football-data.org"
+  data-order-by="points,goalsDifference,goalsFor"
+  data-visualizer="sparklines"
+  ]
