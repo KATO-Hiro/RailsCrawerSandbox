@@ -1,6 +1,15 @@
 h2
   | Replay contest
 
+.replayTable[id="replay-world-tour-final"
+  data-source="csv/world_tour_final/world_tour_final_2019.csv"
+  data-transformer="pointsTable"
+  data-insert-start-round="Start"
+  data-extra-columns-number="2,3"
+  data-columns="position,item,Country,Rating,points,points.change"
+  data-labels="#,Handle,Country,Rating,GP30 Points"
+  data-animation-speed=0.5
+  ]
 
 .replayTable[id="replay-formula-one-drivers-2016"
   data-source="csv/formula-one-drivers.csv"
