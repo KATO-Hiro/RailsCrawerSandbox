@@ -1,45 +1,16 @@
 doctype html
 html
   head
-    meta[charset="utf-8"]
     title
       | AtCoder Standings
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
-    script[type="text/javascript" src="https://d3js.org/d3.v4.min.js" crossorigin="anonymous"]
-    script[type="text/javascript" src="https://unpkg.com/replay-table/dist/replay-table.min.js" crossorigin="anonymous"]
-    link[rel="stylesheet" type="text/css" href="https://unpkg.com/replay-table/dist/replay-table.css" crossorigin="anonymous"]
+    = render 'layouts/rails_default'
+    = render 'layouts/replay_table_head'
   body
-    header.navbar.navbar-expand-lg.fixed-top.navbar-inverse.navbar-dark.bg-dark
-      .container
-        = link_to "AtCoder Standings", '/', id:"logo", class: "nav-brand"
-
-      nav
-        ul.nav.navbar-nav.navbar-right
-          li.nav-item
-            = link_to "Home", '/', class: "nav-link"
-          li.nav-item
-            = link_to "Contest", '/contest', class: "nav-link"
-          li.nav-item
-            = link_to "World Tour", '/world_tour', class: "nav-link"
-          li.nav-item
-            = link_to "Links", '#', {class: "nav-link dropdown-toggle", id: "relatedLinks", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false"}
-
-            .dropdown-menu[aria-labelledby="relatedLinks"]
-              = link_to "AtCoder", "https://atcoder.jp/", {class: "dropdown-item", target: "_blank"}
-              = link_to "GitHub", "https://github.com/KATO-Hiro/AtCoderStandings", {class: "dropdown-item", target: "_blank"}
-              = link_to "@hiro_hiro", "https://twitter.com/k_hiro1818", {class: "dropdown-item", target: "_blank"}
+    = render 'layouts/header'
 
     .container
       = yield
 
-    script[type="text/javascript"]
-      |
-        replayTable.magic()
-
-    footer
-      span
-        | Copyright © 2019-2020 hiro_hiro, All Rights Reserved.
+    = render 'layouts/replay_table_body'
+    = render 'layouts/footer'
