@@ -14,16 +14,16 @@ html
   body
     header.navbar.navbar-expand-lg.navbar-fixed-top.navbar-inverse.navbar-dark.bg-dark
       .container
-        = link_to "AtCoder Standings", '/', id:"logo"
+        = link_to "AtCoder Standings", '/', id:"logo", class: "nav-brand"
 
       nav
         ul.nav.navbar-nav.navbar-right
-          li
-            = link_to "Home", '/'
-          li
-            = link_to "Contest", '/contest'
-          li
-            = link_to "Wolrd Tour", '/world_tour'
+          li.nav-item
+            = link_to "Home", '/', class: "nav-link"
+          li.nav-item
+            = link_to "Contest", '/contest', class: "nav-link"
+          li.nav-item
+            = link_to "Wolrd Tour", '/world_tour', class: "nav-link"
 
     .container
       = yield
