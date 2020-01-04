@@ -1,15 +1,15 @@
 header.navbar.navbar-expand-lg.fixed-top.navbar-inverse.navbar-dark.bg-dark
   .container
-    = link_to "AtCoder Standings", '/', id:"logo", class: "nav-brand"
+    = link_to "AtCoder Standings", root_path, id:"logo", class: "nav-brand"
 
   nav
     ul.nav.navbar-nav.navbar-right
       li.nav-item
-        = link_to "Home", '/', class: "nav-link"
+        = link_to "Home", root_path, class: "nav-link"
       li.nav-item
-        = link_to "Contest", '/contest', class: "nav-link"
+        = link_to "Contest", contest_path, class: "nav-link"
       li.nav-item
-        = link_to "World Tour", '/world_tour', class: "nav-link"
+        = link_to "World Tour", world_tour_path, class: "nav-link"
       li.nav-item
         = link_to "Links", '#', {class: "nav-link dropdown-toggle", id: "relatedLinks", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false"}
 
