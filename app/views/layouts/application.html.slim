@@ -5,14 +5,14 @@ html
       | AtCoder Standings
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
     script[type="text/javascript" src="https://d3js.org/d3.v4.min.js" crossorigin="anonymous"]
     script[type="text/javascript" src="https://unpkg.com/replay-table/dist/replay-table.min.js" crossorigin="anonymous"]
     link[rel="stylesheet" type="text/css" href="https://unpkg.com/replay-table/dist/replay-table.css" crossorigin="anonymous"]
   body
-    header.navbar.navbar-fixed-top.navbar-inverse
+    header.navbar.navbar-expand-lg.navbar-fixed-top.navbar-inverse.navbar-dark.bg-dark
       .container
         = link_to "AtCoder Standings", '/', id:"logo"
 
