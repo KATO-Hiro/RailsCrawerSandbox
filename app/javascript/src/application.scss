@@ -1,3 +1,44 @@
 // To use Bootstrap.
+// univarsal
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header */
+
+header {
+  width: 100%;
+  position: absolute;
+  right: 0;
+}
+
+#logo {
+  float: left;
+  color: #fff;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+// Footer
+
+footer {
+  padding-top: 45px;
+  padding-bottom: 30px;
+}
+
+footer span {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 @import '~bootstrap-material-design/scss/bootstrap-material-design';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
