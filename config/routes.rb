@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/home'      , to: 'static_pages#home'
   get '/contest'   , to: 'static_pages#contest'
   get '/world_tour', to: 'static_pages#world_tour'
+
+  get '/signup', to: 'users#new'
 end
