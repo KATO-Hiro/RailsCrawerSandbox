@@ -24,24 +24,23 @@ header {
 #logo {
   float: left;
   color: #fff;
-}
 
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 // Footer
-
 footer {
   padding-top: 45px;
   padding-bottom: 30px;
-}
 
-footer span {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
+  span {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 @import '~bootstrap-material-design/scss/bootstrap-material-design';
