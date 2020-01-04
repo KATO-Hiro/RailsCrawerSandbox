@@ -1,7 +1,13 @@
 class StaticPagesController < ApplicationController
-  def index
+  def home
   end
 
-  def replay
+  def contest
+  end
+
+  def world_tour
+  end
+
+  def links
   end
 end

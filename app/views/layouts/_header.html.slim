@@ -1,0 +1,19 @@
+header.navbar.navbar-expand-lg.fixed-top.navbar-inverse.navbar-dark.bg-dark
+  .container
+    = link_to "AtCoder Standings", root_path, id:"logo", class: "nav-brand"
+
+  nav
+    ul.nav.navbar-nav.navbar-right
+      li.nav-item
+        = link_to "Home", root_path, class: "nav-link"
+      li.nav-item
+        = link_to "Contest", contest_path, class: "nav-link"
+      li.nav-item
+        = link_to "World Tour", world_tour_path, class: "nav-link"
+      li.nav-item
+        = link_to "Links", '#', {class: "nav-link dropdown-toggle", id: "relatedLinks", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false"}
+
+        .dropdown-menu[aria-labelledby="relatedLinks"]
+          = link_to "AtCoder", "https://atcoder.jp/", {class: "dropdown-item", target: "_blank"}
+          = link_to "GitHub", "https://github.com/KATO-Hiro/AtCoderStandings", {class: "dropdown-item", target: "_blank"}
+          = link_to "@hiro_hiro", "https://twitter.com/k_hiro1818", {class: "dropdown-item", target: "_blank"}
