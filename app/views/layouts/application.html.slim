@@ -10,6 +10,12 @@ html
     = render 'layouts/header'
 
     .container
+      - flash.each do |message_type, message|
+        / TODO: Refactoring
+        - if message_type == "success"
+          .alert.alert-success
+            = message
+
       = yield
 
     = render 'layouts/replay_table_body'
