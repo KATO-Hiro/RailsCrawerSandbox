@@ -11,10 +11,8 @@ html
 
     .container
       - flash.each do |message_type, message|
-        / TODO: Refactoring
-        - if message_type == "success"
-          .alert.alert-success
-            = message
+        = content_tag(:div, message, class: "alert alert-#{message_type}")
+          = message
 
       = yield
 
