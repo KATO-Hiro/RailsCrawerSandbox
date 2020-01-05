@@ -13,6 +13,13 @@ body {
   padding-top: 60px;
 }
 
+// mixins, variables, etc.
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* Header */
 
 header {
@@ -29,6 +36,18 @@ header {
     color: #fff;
     text-decoration: none;
   }
+}
+
+// Forms
+input, textarea, select, .uneditable-input {
+  border: 1px, solid #bbb;
+  margin-bottom: 15px;
+  width: 100%;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
 }
 
 // Footer
