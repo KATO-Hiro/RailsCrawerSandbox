@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   get '/contest'   , to: 'static_pages#contest'
   get '/world_tour', to: 'static_pages#world_tour'
 
+  resources :users
   get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
 end
