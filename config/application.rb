@@ -17,6 +17,13 @@ module App
     # the framework and any gems in your application.
     config.generators.template_engine = :slim
 
+    config.generators do |g|
+      g.test_framework :spec,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+    end
+
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
