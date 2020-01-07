@@ -18,10 +18,10 @@ module App
     config.generators.template_engine = :slim
 
     config.generators do |g|
-      g.test_framework :spec,
+      g.test_framework :rspec,
         view_specs: false,
         helper_specs: false,
-        routing_specs: false,
+        routing_specs: false
     end
 
     config.middleware.insert_before 0, Rack::Cors do
