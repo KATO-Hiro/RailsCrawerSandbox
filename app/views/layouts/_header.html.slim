@@ -10,6 +10,11 @@ header.navbar.navbar-expand-lg.fixed-top.navbar-inverse.navbar-dark.bg-dark
         = link_to "Contest", contest_path, class: "nav-link"
       li.nav-item
         = link_to "World Tour", world_tour_path, class: "nav-link"
+
+      - if logged_in?
+        li.nav-item
+          = link_to "#{current_user.name}", edit_user_path(current_user), class: "nav-link"
+
       li.nav-item
         = link_to "Links", '#', {class: "nav-link dropdown-toggle", id: "relatedLinks", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false"}
 
