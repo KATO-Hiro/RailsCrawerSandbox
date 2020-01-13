@@ -69,3 +69,5 @@ gem 'faraday'
 
 # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
 gem 'rack-cors'
+
+gem 'kaminari'
