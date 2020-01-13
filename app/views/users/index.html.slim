@@ -2,8 +2,6 @@ h2
   | All users
 
 ul.users
-  - @users.each do |user|
-    li
-      = link_to user.name, user
+  = render @users
 
   = paginate @users
