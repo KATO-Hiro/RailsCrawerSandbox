@@ -13,6 +13,8 @@ header.navbar.navbar-expand-lg.fixed-top.navbar-inverse.navbar-dark.bg-dark
 
       - if logged_in?
         li.nav-item
+          = link_to "Users", users_path, class: "nav-link"
+        li.nav-item
           = link_to "#{current_user.name}", edit_user_path(current_user), class: "nav-link"
 
       li.nav-item
