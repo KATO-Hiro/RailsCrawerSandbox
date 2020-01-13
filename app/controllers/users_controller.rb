@@ -31,6 +31,8 @@ class UsersController < ApplicationController
 
     # FIXME: 現状、エラーとなる入力に対しても、更新ができてしまう
     if @user.update(user_params)
+      flash[:success] = 'Profile updated'
+      redirect_to @user
     else
       render 'edit'
     end
