@@ -23,6 +23,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+
+    # FIXME: 現状、エラーとなる入力に対しても、更新ができてしまう
+    if @user.update(user_params)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
     def user_params
