@@ -1,8 +1,7 @@
 class Contest < ApplicationRecord
-  # 各属性の存在性の検証
-  ## name
-  ## start_epoch_second
-  ## duration_second
-  ## title
-  ## rate_change
+  validates :name, presence: true
+  validates :start_epoch_second, presence: true
+  validates :duration_second, presence: true
+  validates :title, presence: true
+  validates :rate_change, presence: true
 end

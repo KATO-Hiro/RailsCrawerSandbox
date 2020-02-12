@@ -10,6 +10,6 @@ class CreateContests < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    # コンテスト名を高速に検索するためインデックスの付与
+    add_index :contests, :name
   end
 end
