@@ -40,7 +40,17 @@ module Crawler
     end
   end
 
+  # Usage:
+  # require 'crawler'
+  # Crawler::AtCoderAPI.unified_contest_standings "abc154"
+  # Crawler::AtCoderAPI.fetch_contest_standings "abc154"
+  # Crawler::AtCoderAPI.fetch_virtual_contest_standings "abc154"
   class AtCoderAPI
+    def self.unified_contest_standings(contest_id)
+      self.fetch_contest_standings contest_id
+      self.fetch_virtual_contest_standings contest_id
+    end
+
     # コンテスト本番の順位表をAtCoderのAPI経由で取得
     def self.fetch_contest_standings(contest_id)
       request   = AtCoder::Request::StandingsRequest.build(contest_id)
