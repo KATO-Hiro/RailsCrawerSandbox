@@ -33,6 +33,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.
+  gem 'vcr'
+  # Library for stubbing and setting expectations on HTTP requests in Ruby.
+  gem 'webmock'
 end
 
 group :development do
@@ -54,10 +58,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.
-  gem 'vcr'
-  # Library for stubbing and setting expectations on HTTP requests in Ruby.
-  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
