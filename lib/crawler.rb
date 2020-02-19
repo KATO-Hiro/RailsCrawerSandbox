@@ -55,12 +55,14 @@ module Crawler
     def self.fetch_contest_standings(contest_id)
       request   = AtCoder::Request::StandingsRequest.build(contest_id)
       # responses = AtCoder::Client::StandingsClient.send(request)
+      {request: request}
     end
 
     # バーチャルコンテストの順位表をAtCoderのAPI経由で取得
     def self.fetch_virtual_contest_standings(contest_id)
       request   = AtCoder::Request::VirtualStandingsRequest.build(contest_id)
       # responses = AtCoder::Client::VirtualStandingsClient.send(request)
+      {request: request}
     end
   end
 end
