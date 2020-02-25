@@ -1,3 +1,7 @@
+require 'utils/AtCoder/api_request'
+require 'utils/AtCoder/request'
+require 'utils/AtCoder/api_client'
+require 'utils/AtCoder/client'
 require 'utils/AtCoderProblems/api_request'
 require 'utils/AtCoderProblems/request'
 require 'utils/AtCoderProblems/api_client'
@@ -36,7 +40,29 @@ module Crawler
     end
   end
 
-  # コンテスト本番の順位表をAtCoderのAPI経由で取得
+  # Usage:
+  # require 'crawler'
+  # Crawler::AtCoderAPI.unified_contest_standings "abc154"
+  # Crawler::AtCoderAPI.fetch_contest_standings "abc154"
+  # Crawler::AtCoderAPI.fetch_virtual_contest_standings "abc154"
+  class AtCoderAPI
+    def self.unified_contest_standings(contest_id)
+      self.fetch_contest_standings contest_id
+      self.fetch_virtual_contest_standings contest_id
+    end
 
-  # バーチャルコンテストの順位表をAtCoderのAPI経由で取得
+    # コンテスト本番の順位表をAtCoderのAPI経由で取得
+    def self.fetch_contest_standings(contest_id)
+      request   = AtCoder::Request::StandingsRequest.build(contest_id)
+      # responses = AtCoder::Client::StandingsClient.send(request)
+      {request: request}
+    end
+
+    # バーチャルコンテストの順位表をAtCoderのAPI経由で取得
+    def self.fetch_virtual_contest_standings(contest_id)
+      request   = AtCoder::Request::VirtualStandingsRequest.build(contest_id)
+      # responses = AtCoder::Client::VirtualStandingsClient.send(request)
+      {request: request}
+    end
+  end
 end

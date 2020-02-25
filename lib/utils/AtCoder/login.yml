@@ -1,0 +1,8 @@
+# Set your credential before use. Do not commit it!
+#
+# Usage:
+# :user_name: Your user name in AtCoder
+# :password: Your password in AtCoder
+---
+:user_name:
+:password:
