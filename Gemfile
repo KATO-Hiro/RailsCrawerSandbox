@@ -71,6 +71,9 @@ gem 'html2slim'
 # Simple, but flexible HTTP client library, with support for multiple backends.
 gem 'faraday'
 
+# Mechanize is a ruby library that makes automated web interaction easy.
+gem 'mechanize'
+
 # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
 gem 'rack-cors'
 
