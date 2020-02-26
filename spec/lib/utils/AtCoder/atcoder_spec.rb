@@ -9,8 +9,12 @@ RSpec.describe AtCoder, type: :lib do
       before do
         # HACK: ログイン情報の取得に失敗した場合の処理を追加する必要があるのでは?
         credential = YAML.load(File.read("lib/utils/AtCoder/login.yml"))
-        @response  = AtCoder::AtCoder.login(credential[:user_name],
-                                            credential[:password])
+        @response  = nil
+
+        VCR.use_cassette("atcoder/login") do
+          @response = AtCoder::AtCoder.login(credential[:user_name],
+                                             credential[:password])
+        end
       end
 
       it "ログインに成功" do

@@ -1,13 +1,19 @@
 require 'rails_helper'
+require 'vcr'
+
 require 'crawler'
 
 RSpec.describe Crawler, type: :lib do
   describe "AtCoder本家からコンテスト本番の順位表を取得(.json)" do
     before do
-      results = Crawler::AtCoderAPI.fetch_contest_standings "abc155"
+      results = nil
+
+      VCR.use_cassette("atcoder/abc155") do
+        results = Crawler::AtCoderAPI.fetch_contest_standings "abc155"
+      end
+
       @request = results[:request]
-      # レスポンスを受け取る
-      # vcrを使って、jsonファイルを保存する(APIを複数回叩かないようにするため)
+      @responses = results[:responses]
     end
 
     context "正常系: 順位表が取得できた場合" do
@@ -19,6 +25,11 @@ RSpec.describe Crawler, type: :lib do
       it "コンテストのURLを返す" do
         contest_url = "https://atcoder.jp/contests/abc155/standings/json"
         expect(@request[:url]).to eq contest_url
+      end
+
+      it "APIからの応答がある" do
+        expect(@responses.nil?).to eq false
+        Rails.logger.info("INFO: #{@responses["StandingsData"]}")
       end
 
       it "コンテスタントの属性を返す"
@@ -38,10 +49,14 @@ RSpec.describe Crawler, type: :lib do
 
   describe "AtCoder本家からバーチャルコンテストの順位表を取得(.json)" do
     before do
-      results = Crawler::AtCoderAPI.fetch_virtual_contest_standings "abc155"
+      results = nil
+
+      VCR.use_cassette("atcoder/virtual_abc155") do
+        results = Crawler::AtCoderAPI.fetch_virtual_contest_standings "abc155"
+      end
+
       @request = results[:request]
-      # レスポンスを受け取る
-      # vcrを使って、jsonファイルを保存する(APIを複数回叩かないようにするため)
+      @responses = results[:responses]
     end
 
     context "正常系: 順位表が取得できた場合" do
@@ -53,6 +68,11 @@ RSpec.describe Crawler, type: :lib do
       it "コンテストのURLを返す" do
         contest_url = "https://atcoder.jp/contests/abc155/standings/virtual/json"
         expect(@request[:url]).to eq contest_url
+      end
+
+      it "APIからの応答がある" do
+        expect(@responses.nil?).to eq false
+        Rails.logger.info("INFO: #{@responses["StandingsData"]}")
       end
 
       it "コンテスタントの属性を返す"

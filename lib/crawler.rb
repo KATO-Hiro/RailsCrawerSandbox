@@ -1,3 +1,5 @@
+# require 'logger'
+
 require 'utils/AtCoder/api_request'
 require 'utils/AtCoder/request'
 require 'utils/AtCoder/api_client'
@@ -12,6 +14,7 @@ module Crawler
   # 手順  : Railsガイドにしたがって設定した
   # エラー: debug、infoなどのメソッドが存在しない
   # @logger = Logger.new(STDOUT)
+  # @logger = Logger.new('log/crawler.log')
 
   # Usage:
   # require 'crawler'
@@ -53,16 +56,32 @@ module Crawler
 
     # コンテスト本番の順位表をAtCoderのAPI経由で取得
     def self.fetch_contest_standings(contest_id)
+      Rails.logger.info("INFO: Start fetch_contest_standings")
+
       request   = AtCoder::Request::StandingsRequest.build(contest_id)
-      # responses = AtCoder::Client::StandingsClient.send(request)
-      {request: request}
+      responses = AtCoder::Client::StandingsClient.send(request)
+
+      Rails.logger.info("INFO: End fetch_contest_standings")
+
+      {
+        request:   request,
+        responses: responses
+      }
     end
 
     # バーチャルコンテストの順位表をAtCoderのAPI経由で取得
     def self.fetch_virtual_contest_standings(contest_id)
+      Rails.logger.info("INFO: Start fetch_virtual_contest_standings")
+
       request   = AtCoder::Request::VirtualStandingsRequest.build(contest_id)
-      # responses = AtCoder::Client::VirtualStandingsClient.send(request)
-      {request: request}
+      responses = AtCoder::Client::StandingsClient.send(request)
+
+      Rails.logger.info("INFO: End fetch_virtual_contest_standings")
+
+      {
+        request:   request,
+        responses: responses
+      }
     end
   end
 end
