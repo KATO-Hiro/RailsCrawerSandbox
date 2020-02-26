@@ -94,3 +94,28 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+require 'json'
+require 'vcr'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/vcr"
+  config.hook_into :webmock
+  config.allow_http_connections_when_no_cassette = true
+  config.configure_rspec_metadata!
+
+  config.default_cassette_options = {
+    serialize_with: :yaml,
+    record: :new_episodes,
+    allow_playback_repeats: true,
+    decode_compressed_response: true
+  }
+
+  config.before_record do |interaction|
+    interaction.response.body.force_encoding 'UTF-8'
+
+    if interaction.response.body.present? && !interaction.response.body.include?("!DOCTYPE html")
+      interaction.response.body = JSON.pretty_generate(JSON.parse(interaction.response.body))
+    end
+  end
+end

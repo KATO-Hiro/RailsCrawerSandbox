@@ -73,6 +73,7 @@ gem 'faraday'
 
 # Mechanize is a ruby library that makes automated web interaction easy.
 gem 'mechanize'
+gem "nokogiri", ">= 1.10.8"
 
 # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
 gem 'rack-cors'
