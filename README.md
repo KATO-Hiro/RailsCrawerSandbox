@@ -1,6 +1,6 @@
-# AtCoder Standings
+# RailsCrawerSandbox
 
-Replay interactive standings of [AtCoder](https://atcoder.jp/) contests.
+Sandbox of crawler using rails.
 
 ## Description
 
@@ -10,7 +10,7 @@ Comming soon.
 
 ## Features
 
-- Replay AtCoder's contest standings
+- Comming soon.
 
 ## Requirement
 
@@ -28,15 +28,15 @@ Comming soon.
 
 ## Usage
 
-1. Choose a contest from list
-2. Click Replay button
+- Comming soon.
+- Comming soon.
 
 ## Installation
 
 Paste the following commands at a Terminal prompt.
 
 ```terminal
-$ git clone git@github.com:KATO-Hiro/AtCoderStandings.git
+$ git clone git@github.com:KATO-Hiro/RailsCrawerSandbox.git
 ```
 
 ## Getting started
@@ -106,12 +106,6 @@ $ stop
 ```
 
 ## Links
-
-[AtCoder](https://atcoder.jp/)
-
-[AtCoder Problems](https://kenkoooo.com/atcoder/#/table/)
-
-[AtCoder Problems Information API](https://github.com/kenkoooo/AtCoderProblems)
 
 [Readme Driven Development; RDD](https://qiita.com/b4b4r07/items/c80d53db9a0fd59086ec)
 
